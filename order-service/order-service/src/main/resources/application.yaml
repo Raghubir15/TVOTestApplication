@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: order-service
+
+    server:
+      port: 8092
+
+
+services:
+  product:
+    url:
+
+  activation:
+    url:
