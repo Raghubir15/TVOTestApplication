@@ -2,13 +2,13 @@ spring:
   application:
     name: order-service
 
-    server:
-      port: 8092
+server:
+  port: 8090
 
 
 services:
   product:
-    url:
+    url: http://localhost:8092
 
   activation:
-    url:
+    url: http://localhost:8091

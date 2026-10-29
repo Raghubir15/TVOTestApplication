@@ -2,5 +2,5 @@ spring:
   application:
     name: activation-service
 
-    server:
-      port: 8091
+server:
+  port: 8091

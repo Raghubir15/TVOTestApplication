@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -24,23 +25,22 @@ public class ProductClient {
 
     public List<ProductDto> getProducts(
             String customerId) {
+        try {
 
-        ProductDto[] response =
-                restClient.get()
-                        .uri(productUrl +
-                                        "/products/customer/{id}",
-                                customerId)
-                        .retrieve()
-                        .onStatus(
-                                HttpStatusCode::isError,
-                                (req, res) -> {
-                                    throw new ExternalServiceException(
-                                            "Product Service Exception");
-                                })
-                        .body(ProductDto[].class);
+            System.out.println("productUrl = " + productUrl);
 
-         return response == null
-                ? List.of()
-                : Arrays.asList(response);
+            ProductDto[] products = restClient.get()
+                    .uri(productUrl + "/products/customer/{customerId}", customerId)
+                    .retrieve()
+                    .body(ProductDto[].class);
+
+            return products != null
+                    ? Arrays.asList(products)
+                    : Collections.emptyList();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw ex;
+        }
     }
 }

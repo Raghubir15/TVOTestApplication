@@ -15,12 +15,17 @@ public class ProductRepository {
                 new Product(
                         customerId,
                         "P100",
-                        "Savings Account"
+                        "SERVICE TVO-Today"
                 ),
                 new Product(
                         customerId,
                         "P200",
-                        "Credit Card"
+                        "SERVICE TVO-Kids"
+                ),
+                new Product(
+                        customerId,
+                        "P300",
+                        "SERVICE TVO-learn"
                 )
         );
     }

@@ -6,7 +6,14 @@ public class CustomerProductsResponse {
     private Integer totalProducts;
     private List<CustomerProductDto> products;
 
-    public CustomerProductsResponse(String customerId, List<CustomerProductDto> result) {
+    public CustomerProductsResponse(String customerId,
+                                    List<CustomerProductDto> products) {
+
+        this.customerId = customerId;
+        this.products = products;
+        this.totalProducts = products != null
+                ? products.size()
+                : 0;
     }
 
     public String getCustomerId() {

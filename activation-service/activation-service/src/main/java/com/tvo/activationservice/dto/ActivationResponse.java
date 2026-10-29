@@ -1,20 +1,21 @@
 package com.tvo.activationservice.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ActivationResponse {
+
     private String productId;
-    private boolean active;
+    private String status;
+}
 
-    public ActivationResponse(String productId, boolean active) {
+    /*public ActivationResponse(String productId, String status) {
         this.productId = productId;
-        this.active = active;
-    }
-
-    @Override
-    public String toString() {
-        return "ActivationResponse{" +
-                "productId='" + productId + '\'' +
-                ", active=" + active +
-                '}';
+        this.status = status ;
     }
 
     public String getProductId() {
@@ -25,11 +26,19 @@ public class ActivationResponse {
         this.productId = productId;
     }
 
-    public boolean isActive() {
-        return active;
+    public String getStatus() {
+        return status;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setStatus(String status) {
+        this.status = status;
     }
-}
+
+    @Override
+    public String toString() {
+        return "ActivationResponse{" +
+                "productId='" + productId + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+}*/

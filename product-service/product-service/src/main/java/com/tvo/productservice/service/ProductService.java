@@ -27,7 +27,6 @@ public class ProductService {
                                         product.getProductId(),
                                         product.getProductName()))
                         .toList();
-
         if(response.isEmpty()) {
             throw new ProductNotFoundException(customerId);
         }

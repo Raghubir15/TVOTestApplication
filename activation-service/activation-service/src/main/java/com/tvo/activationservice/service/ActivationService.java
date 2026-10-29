@@ -23,7 +23,7 @@ public class ActivationService {
                 .map(activation ->
                         new ActivationResponse(
                                 activation.getProductId(),
-                                activation.isActive()))
+                                activation.getStatus()))
                 .orElseThrow(() ->
                         new ActivationNotFoundException(
                                 productId));

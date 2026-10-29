@@ -1,15 +1,21 @@
 package com.tvo.activationservice.exception;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ErrorResponse {
     LocalDateTime timestamp;
     int status;
     String message;
     List<String> errors;
 
-    public ErrorResponse(LocalDateTime timestamp, int status, String message, List<String> errors) {
+   /* public ErrorResponse(LocalDateTime timestamp, int status, String message, List<String> errors) {
         this.timestamp = timestamp;
         this.status = status;
         this.message = message;
@@ -56,5 +62,5 @@ public class ErrorResponse {
 
     public void setErrors(List<String> errors) {
         this.errors = errors;
-    }
+    }*/
 }

@@ -1,6 +1,7 @@
-/*
+
 package com.tvo.activationservice.exception;
 
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,4 +55,4 @@ public class GlobalExceptionHandler {
                         ));
     }
 }
-*/
+
